@@ -1,0 +1,258 @@
+.key-style-control {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 0 5px 15px;
+  font: 10px var(--mono);
+  color: inherit;
+}
+.key-style-control label {
+  opacity: 0.7;
+}
+.key-style-control select {
+  font: 11px var(--mono);
+  color: inherit;
+  background: transparent;
+  border: 1px solid #87917f66;
+  border-radius: 4px;
+  padding: 6px 22px 6px 9px;
+  cursor: pointer;
+  min-height: 32px;
+  max-width: 150px;
+}
+.key-style-control select:focus-visible {
+  outline: 2px solid #5b8d79;
+  outline-offset: 3px;
+}
+.dark .key-style-control select {
+  color-scheme: dark;
+}
+.calculator[data-key-style="classic"] {
+  --cap-face: linear-gradient(#55564f, #41433c);
+  --cap-ink: #f1eee1;
+  --cap-rim: #77786b;
+  --cap-base: #161c13;
+  --cap-radius: 3px 3px 5px 5px;
+  --cap-font: var(--mono);
+  --cap-weight: 500;
+  --number-face: linear-gradient(#eee8d5, #d7cfb9);
+  --number-ink: #343527;
+  --number-size: 22px;
+  --operator-face: linear-gradient(#c9c6b6, #b1ae9c);
+  --operator-ink: #303328;
+  --enter-face: linear-gradient(#e0b08a, #c79167);
+  --enter-ink: #352313;
+  --second-face: linear-gradient(#a5c3c5, #87a8ac);
+  --alpha-face: linear-gradient(#c6cb9f, #a5ae7b);
+  --legend-blue: #a6c7cd;
+  --legend-green: #d0d0a8;
+  --rocker-face: linear-gradient(145deg, #e2dbc9, #bbb8a2);
+  --cap-travel: 2px;
+}
+.calculator[data-key-style="onyx"] {
+  --cap-face: linear-gradient(#393d3a, #262c28);
+  --cap-ink: #e8ede6;
+  --cap-rim: #576152;
+  --cap-base: #101610;
+  --cap-radius: 10px;
+  --cap-font: Inter, sans-serif;
+  --cap-weight: 500;
+  --number-face: linear-gradient(#505950, #3b453c);
+  --number-ink: #f1f4ec;
+  --number-size: 24px;
+  --operator-face: linear-gradient(#5b6954, #485941);
+  --operator-ink: #f7f9f1;
+  --enter-face: linear-gradient(#bbc7b5, #9eaf96);
+  --enter-ink: #1f2e1c;
+  --second-face: linear-gradient(#91aaa6, #7f9690);
+  --alpha-face: linear-gradient(#b3bba3, #9fa98d);
+  --legend-blue: #b2c7c1;
+  --legend-green: #c5ccb7;
+  --rocker-face: linear-gradient(145deg, #aebba5, #7d8e73);
+  --cap-travel: 1.5px;
+}
+.calculator[data-key-style="precision"] {
+  --cap-face: linear-gradient(#3d4852, #2c3840);
+  --cap-ink: #eef3f4;
+  --cap-rim: #667785;
+  --cap-base: #131c23;
+  --cap-radius: 4px 4px 7px 7px;
+  --cap-font: var(--mono);
+  --cap-weight: 500;
+  --number-face: linear-gradient(#dce4e6, #bfcdd1);
+  --number-ink: #23333b;
+  --number-size: 23px;
+  --operator-face: linear-gradient(#a9bcc5, #8ca6b2);
+  --operator-ink: #19313c;
+  --enter-face: linear-gradient(#a3c1d8, #7da5c2);
+  --enter-ink: #163143;
+  --second-face: linear-gradient(#8cbbce, #6d9fb5);
+  --alpha-face: linear-gradient(#acbfad, #8ea88f);
+  --legend-blue: #abc9e1;
+  --legend-green: #bacfba;
+  --rocker-face: linear-gradient(145deg, #c4d1d7, #99adb7);
+  --cap-travel: 2.2px;
+}
+.calculator[data-key-style="soft-touch"] {
+  --cap-face: linear-gradient(#5d5e57, #4a4e46);
+  --cap-ink: #f5f1e5;
+  --cap-rim: #7f8274;
+  --cap-base: #20271b;
+  --cap-radius: 13px;
+  --cap-font: Inter, sans-serif;
+  --cap-weight: 600;
+  --number-face: linear-gradient(#dedbcf, #c5c4b3);
+  --number-ink: #30372b;
+  --number-size: 23px;
+  --operator-face: linear-gradient(#bcc5ae, #a0af91);
+  --operator-ink: #26351f;
+  --enter-face: linear-gradient(#cbb795, #b29a73);
+  --enter-ink: #352b1a;
+  --second-face: linear-gradient(#a6c0c1, #8fa9ac);
+  --alpha-face: linear-gradient(#c5c69c, #a9ad80);
+  --legend-blue: #bfced0;
+  --legend-green: #d7cdaa;
+  --rocker-face: linear-gradient(145deg, #d2d5c3, #b4bea4);
+  --cap-travel: 3px;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key {
+  background: var(--cap-face);
+  color: var(--cap-ink);
+  border-radius: var(--cap-radius);
+  border-color: var(--cap-base);
+  border-top-color: var(--cap-rim);
+  border-left-color: var(--cap-rim);
+  font-family: var(--cap-font);
+  font-weight: var(--cap-weight);
+  text-shadow: 0 1px 1px #0003;
+  box-shadow:
+    0 3px 0 var(--cap-base),
+    0 4px 2px #0a130a80,
+    inset 0 1px 0 #ffffff17;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key.number {
+  background: var(--number-face);
+  color: var(--number-ink);
+  font-size: var(--number-size);
+  text-shadow: none;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key.operator {
+  background: var(--operator-face);
+  color: var(--operator-ink);
+  text-shadow: none;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key.graph-key {
+  background: var(--number-face);
+  color: var(--number-ink);
+  font-size: 10px;
+  text-shadow: none;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key.second {
+  background: var(--second-face);
+  color: #172c2e;
+  text-shadow: none;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key.alpha {
+  background: var(--alpha-face);
+  color: #29331e;
+  text-shadow: none;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key.enter {
+  background: var(--enter-face);
+  color: var(--enter-ink);
+  text-shadow: none;
+  box-shadow:
+    0 4px 0 var(--cap-base),
+    0 5px 3px #09170d99,
+    inset 0 1px 0 #ffffff33;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"])
+  .key:is(:active, .is-depressed) {
+  transform: translateY(var(--cap-travel)) scale(0.985);
+  box-shadow:
+    0 0.5px 0 var(--cap-base),
+    inset 0 1px 3px #0003;
+}
+.calculator[data-key-style]:not([data-key-style="graphite"])
+  .key.enter:is(:active, .is-depressed) {
+  transform: translateY(calc(var(--cap-travel) + 1px)) scale(0.985);
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key-legend {
+  color: var(--legend-blue);
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .key-legend i {
+  color: var(--legend-green);
+}
+.calculator[data-key-style]:not([data-key-style="graphite"]) .rocker-cap {
+  background: var(--rocker-face);
+  border-color: var(--cap-rim);
+}
+.calculator[data-key-style="classic"] .key.number {
+  letter-spacing: -1px;
+}
+.calculator[data-key-style="soft-touch"] .key {
+  border-top-color: #a0a393;
+  box-shadow:
+    0 3px 0 var(--cap-base),
+    inset 0 1px 3px #ffffff1a;
+}
+.instrument-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 5px 15px;
+}
+.instrument-controls .key-style-control {
+  margin: 0;
+  gap: 7px;
+  flex: 1;
+  justify-content: space-between;
+  min-width: 145px;
+}
+.instrument-controls select {
+  padding: 6px;
+  max-width: 119px;
+  min-width: 86px;
+}
+.mapping-control select {
+  max-width: 86px;
+}
+.guide {
+  width: 470px;
+  max-width: 90vw;
+  max-height: calc(100dvh - 130px);
+  overflow-y: auto;
+}
+.keyboard-reference {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9px;
+  line-height: 1.6;
+  text-align: left;
+}
+.keyboard-reference th,
+.keyboard-reference td {
+  padding: 8px 5px;
+  border-bottom: 1px solid #87917f44;
+  vertical-align: top;
+}
+.keyboard-reference thead th {
+  font-size: 8px;
+  font-weight: 500;
+}
+.keyboard-reference tbody th {
+  font-weight: 500;
+  max-width: 120px;
+}
+.keyboard-reference td {
+  font-family: var(--mono);
+  font-size: 9px;
+}
+.keyboard-reference td:last-child {
+  font-family: inherit;
+}
+.guide h2 {
+  margin-top: 0;
+}

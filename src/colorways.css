@@ -1,0 +1,303 @@
+/* Hardware finishes share dimensions and interaction; only material tokens change. */
+.calculator:is([data-shell], [data-key-style="amber"]) {
+  --cap-font: Inter, sans-serif;
+  --cap-weight: 600;
+  --cap-radius: 16px;
+  --number-size: 23px;
+  --cap-travel: 2.8px;
+  --cap-face: linear-gradient(#e3e4db, #cdd1c4);
+  --cap-ink: #303a2b;
+  --cap-rim: #f3f4e8;
+  --cap-base: #939f89;
+  --number-face: linear-gradient(#faf9ee, #e6e9da);
+  --number-ink: #293426;
+  --operator-face: linear-gradient(#c6ceba, #acb99d);
+  --operator-ink: #27371e;
+  --enter-face: linear-gradient(#637b55, #4b643e);
+  --enter-ink: #f9faef;
+  --second-face: linear-gradient(#c2d7d5, #aec5c5);
+  --alpha-face: linear-gradient(#d7daba, #c3c9a1);
+  --legend-blue: #3e5b60;
+  --legend-green: #4d5d35;
+  --rocker-face: linear-gradient(145deg, #e8eddd, #c9d3bc);
+  --shell-surface: linear-gradient(110deg, #d9dfd0, #c3cdb8);
+  --shell-ink: #303d2b;
+  --shell-edge: #97a58a;
+  --bezel-surface: #67715f;
+  --lcd: #edf0e4;
+}
+.calculator[data-shell] {
+  background: var(--shell-surface);
+  border-color: var(--shell-edge);
+  color: var(--shell-ink);
+  box-shadow:
+    inset 2px 1px 2px #ffffff99,
+    inset -2px -2px 3px #5f705144,
+    0 3px 0 var(--shell-edge),
+    0 6px 0 #7f8e724d,
+    8px 22px 30px #26302020,
+    17px 37px 50px #303b2414;
+}
+.calculator[data-shell]::before {
+  opacity: 0.07;
+}
+.calculator[data-shell] .hardware-brand .plus,
+.calculator[data-shell] .edition,
+.calculator[data-shell] .hardware-footer {
+  color: var(--shell-ink);
+}
+.calculator[data-shell] .screen-bezel {
+  background: var(--bezel-surface);
+  border-color: var(--shell-edge);
+  box-shadow:
+    inset 0 3px 6px #16251980,
+    0 1px 0 #ffffff66;
+}
+.calculator[data-shell] .hardware-seam {
+  background: var(--shell-edge);
+  box-shadow: 0 1px 0 #ffffff88;
+}
+.calculator[data-shell] .rocker-hub {
+  background: linear-gradient(145deg, #77836b, #58664c);
+  border-color: var(--shell-edge);
+}
+.calculator[data-key-style="blush"] {
+  --shell-surface: linear-gradient(110deg, #f0d4d9, #dbb8c3);
+  --shell-ink: #53313f;
+  --shell-edge: #bd94a2;
+  --bezel-surface: #aa8493;
+  --cap-face: linear-gradient(#e5c2cd, #d5aebb);
+  --cap-ink: #492b39;
+  --cap-rim: #fae6eb;
+  --cap-base: #b48798;
+  --number-face: linear-gradient(#fff4f1, #efdbdf);
+  --number-ink: #452c36;
+  --operator-face: linear-gradient(#d6a4b6, #c28ba0);
+  --operator-ink: #3e2631;
+  --enter-face: linear-gradient(#9c5974, #84465f);
+  --enter-ink: #fff7fa;
+  --second-face: linear-gradient(#dfd4e7, #c9bad5);
+  --alpha-face: linear-gradient(#e4dbc2, #d4c8a9);
+  --legend-blue: #684857;
+  --legend-green: #5c5340;
+  --rocker-face: linear-gradient(145deg, #f6e2e8, #d9b5c4);
+  --lcd: #f0eee7;
+}
+.calculator[data-key-style="sage"] {
+  --shell-surface: linear-gradient(110deg, #d5ddc9, #b8c7a7);
+  --shell-ink: #35472b;
+  --shell-edge: #96aa83;
+  --cap-face: linear-gradient(#c6d1b9, #b1c29f);
+  --cap-ink: #283c20;
+  --cap-base: #91a37f;
+  --number-face: linear-gradient(#f5f3e5, #e1e7d3);
+  --operator-face: linear-gradient(#a6b993, #8fa67c);
+  --operator-ink: #21351a;
+  --enter-face: linear-gradient(#536c47, #415a35);
+  --legend-blue: #3f5b52;
+  --legend-green: #485a2c;
+  --rocker-face: linear-gradient(145deg, #e8ebd9, #bdcba9);
+}
+.calculator[data-key-style="lavender-mint"] {
+  --shell-surface: linear-gradient(110deg, #e4dfee, #c8bfdc);
+  --shell-ink: #443555;
+  --shell-edge: #a89bbc;
+  --bezel-surface: #9486a8;
+  --cap-face: linear-gradient(#d8cce7, #c3b2d6);
+  --cap-ink: #40304e;
+  --cap-rim: #f2ebfa;
+  --cap-base: #a692ba;
+  --number-face: linear-gradient(#f8f4fb, #e4dced);
+  --number-ink: #3f324c;
+  --operator-face: linear-gradient(#bfd9c8, #a9c7b8);
+  --operator-ink: #293e31;
+  --enter-face: linear-gradient(#537865, #416350);
+  --enter-ink: #f5faf3;
+  --second-face: linear-gradient(#c4d9df, #afc7d0);
+  --alpha-face: linear-gradient(#cbdcc5, #b3c9ac);
+  --legend-blue: #4c4569;
+  --legend-green: #3e5947;
+  --rocker-face: linear-gradient(145deg, #e4f0e5, #b9cfbd);
+  --lcd: #eeedf2;
+}
+.calculator[data-key-style="retro-typewriter"] {
+  --shell-surface: linear-gradient(110deg, #e7ddbf, #cfc09d);
+  --shell-ink: #493e2a;
+  --shell-edge: #b1a17d;
+  --bezel-surface: #766951;
+  --cap-radius: 50%;
+  --cap-font: var(--mono);
+  --cap-weight: 500;
+  --number-size: 22px;
+  --cap-face: linear-gradient(#6b6658, #534f42);
+  --cap-ink: #faf2dc;
+  --cap-rim: #9c9177;
+  --cap-base: #776b52;
+  --number-face: linear-gradient(#f8efd5, #e5d7b5);
+  --number-ink: #403c2d;
+  --operator-face: linear-gradient(#c9ad65, #b89a51);
+  --operator-ink: #3c3016;
+  --enter-face: linear-gradient(#aa5e36, #8e4929);
+  --enter-ink: #fffefd;
+  --second-face: linear-gradient(#d3bb7c, #bda366);
+  --alpha-face: linear-gradient(#c7c59c, #b2b083);
+  --legend-blue: #4c4e40;
+  --legend-green: #5d4b26;
+  --rocker-face: linear-gradient(145deg, #e7dcbc, #bfb08b);
+  --lcd: #e9e8d1;
+  --cap-travel: 3px;
+}
+.calculator[data-key-style="porcelain"] {
+  --shell-surface: linear-gradient(110deg, #f8f8f2, #dfe2d9);
+  --shell-ink: #3d4638;
+  --shell-edge: #bec5b6;
+  --bezel-surface: #a0aa96;
+  --cap-radius: 7px;
+  --cap-face: linear-gradient(#eeeee7, #dadfd2);
+  --number-face: linear-gradient(#ffffff, #f0f2e9);
+  --operator-face: linear-gradient(#dce0d5, #c3cdbb);
+  --enter-face: linear-gradient(#57634f, #424f39);
+  --second-face: linear-gradient(#d9e3e1, #c3d2cf);
+  --alpha-face: linear-gradient(#e2e6d8, #cdd5bf);
+  --legend-blue: #4f625d;
+  --legend-green: #536047;
+  --rocker-face: linear-gradient(145deg, #fafcf4, #d7dfce);
+  --cap-travel: 1.8px;
+}
+.calculator[data-key-style="stone"] {
+  --shell-surface: linear-gradient(110deg, #e0dbd1, #c7c3b9);
+  --shell-ink: #45453b;
+  --shell-edge: #aaa89b;
+  --bezel-surface: #858779;
+  --cap-radius: 9px;
+  --cap-face: linear-gradient(#d2d0c5, #bdbeb0);
+  --cap-ink: #373b30;
+  --cap-rim: #ebe9df;
+  --cap-base: #9b9f8d;
+  --number-face: linear-gradient(#f4f1e6, #deded0);
+  --operator-face: linear-gradient(#bdc6b2, #a9b69a);
+  --enter-face: linear-gradient(#6e6d5f, #56564a);
+  --second-face: linear-gradient(#c9d5d2, #b6c6c2);
+  --alpha-face: linear-gradient(#d7d4b8, #c3c1a0);
+  --legend-blue: #4d5c56;
+  --legend-green: #5b5940;
+  --rocker-face: linear-gradient(145deg, #e6e6d9, #bfc6b0);
+  --lcd: #eaece2;
+  --cap-travel: 2px;
+}
+.calculator[data-key-style="amber"] {
+  --cap-radius: 11px;
+  --cap-face: linear-gradient(#343330, #242522);
+  --cap-ink: #f3eee0;
+  --cap-rim: #5c594e;
+  --cap-base: #10130e;
+  --number-face: linear-gradient(#44443c, #30332b);
+  --number-ink: #faf6e8;
+  --operator-face: linear-gradient(#dfb86a, #c79c4d);
+  --operator-ink: #30230f;
+  --enter-face: linear-gradient(#e6b866, #ca9b45);
+  --enter-ink: #30230e;
+  --second-face: linear-gradient(#c3b382, #a99a68);
+  --alpha-face: linear-gradient(#aeb59b, #969e81);
+  --legend-blue: #d8c291;
+  --legend-green: #c9d0b9;
+  --rocker-face: linear-gradient(145deg, #d5c494, #ac9d6b);
+  --cap-travel: 2.3px;
+}
+.calculator[data-key-style="amber"] {
+  background: linear-gradient(110deg, #31312c, #1d211b);
+  border-color: #575a4b;
+}
+.calculator[data-shell="clear"] {
+  --shell-ink: #344b53;
+  --shell-edge: #9db9bd;
+  --bezel-surface: #819ea2;
+  --cap-radius: 8px;
+  --cap-face: linear-gradient(#d7e7e8, #bdd3d5);
+  --cap-ink: #29454b;
+  --cap-rim: #eefafa;
+  --cap-base: #87aeb3;
+  --number-face: linear-gradient(#f3fcfa, #d8e9e8);
+  --number-ink: #294249;
+  --operator-face: linear-gradient(#b3d0d3, #96b8bf);
+  --operator-ink: #253f48;
+  --enter-face: linear-gradient(#496f75, #35585e);
+  --enter-ink: #f5fffa;
+  --second-face: linear-gradient(#bfd5e8, #a4c2d9);
+  --alpha-face: linear-gradient(#c9dfce, #b0ccb7);
+  --legend-blue: #36545e;
+  --legend-green: #3d5948;
+  --rocker-face: linear-gradient(145deg, #e8f6f1, #bad6d0);
+  --shell-glaze: linear-gradient(110deg, #edfaffbd, #c0e0e4c2);
+  --lcd: #e8f0e9;
+  --cap-travel: 2px;
+  background-image:
+    var(--shell-glaze),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='180' viewBox='0 0 140 180'%3E%3Cg fill='none' stroke='%23688189' stroke-width='1.2'%3E%3Cpath d='M8 0v35l18 18v54L8 125v55M132 0v54l-16 16v64l16 16v30M0 20h50l14 14v62l-14 14H0M140 34h-44l-12 12v90l14 14h42M36 0v18l42 42v120'/%3E%3C/g%3E%3Cg fill='%23688189'%3E%3Ccircle cx='26' cy='107' r='3'/%3E%3Ccircle cx='116' cy='70' r='3'/%3E%3Ccircle cx='64' cy='96' r='3'/%3E%3C/g%3E%3C/svg%3E");
+  background-size:
+    auto,
+    140px 180px;
+}
+.calculator[data-shell="clear"]::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #ffffff99;
+  border-radius: 32px 32px 36px 36px;
+  pointer-events: none;
+  z-index: -1;
+  box-shadow:
+    inset 0 0 0 3px #799fa522,
+    0 0 0 1px #71919922;
+}
+.calculator[data-shell="clear"] .hardware-seam {
+  background: #719da877;
+  box-shadow: 0 1px 0 #ffffffbb;
+}
+.calculator[data-key-style="clear-lilac"] {
+  --shell-glaze: linear-gradient(110deg, #f0eaffbf, #cec3eac4);
+  --shell-ink: #4d4264;
+  --shell-edge: #a99dc4;
+  --bezel-surface: #9d91b8;
+  --cap-face: linear-gradient(#e2daef, #c9bddf);
+  --cap-ink: #473958;
+  --cap-base: #a595c0;
+  --number-face: linear-gradient(#faf6ff, #e7dff2);
+  --number-ink: #443551;
+  --operator-face: linear-gradient(#c8c0e3, #b1a5cd);
+  --operator-ink: #3e3251;
+  --enter-face: linear-gradient(#79678f, #604e77);
+  --second-face: linear-gradient(#c2d8e3, #abc6d3);
+  --alpha-face: linear-gradient(#d3e0d0, #b9d0b6);
+  --legend-blue: #514364;
+  --legend-green: #44563d;
+  --rocker-face: linear-gradient(145deg, #eee8f8, #cec0e2);
+}
+.calculator[data-key-style="clear-mint"] {
+  --shell-glaze: linear-gradient(110deg, #eafff3c4, #bde0d1c4);
+  --shell-ink: #355346;
+  --shell-edge: #96bda9;
+  --bezel-surface: #82a592;
+  --cap-face: linear-gradient(#d6eadc, #b9d5c4);
+  --cap-ink: #2e4938;
+  --cap-base: #8caf9a;
+  --number-face: linear-gradient(#f5fff6, #dceddf);
+  --number-ink: #2c4434;
+  --operator-face: linear-gradient(#b4d4c4, #95bba8);
+  --operator-ink: #294534;
+  --enter-face: linear-gradient(#547e65, #3f6651);
+  --second-face: linear-gradient(#c6dae2, #afc8d3);
+  --alpha-face: linear-gradient(#e2dfc5, #ccc9a7);
+  --legend-blue: #3c574d;
+  --legend-green: #48583b;
+  --rocker-face: linear-gradient(145deg, #edf9ec, #c0d9c4);
+}
+
+.instrument-controls .key-style-control:not(.mapping-control) {
+  flex: 1.2;
+  min-width: 174px;
+}
+.instrument-controls .key-style-control:not(.mapping-control) select {
+  max-width: 150px;
+  min-width: 135px;
+}

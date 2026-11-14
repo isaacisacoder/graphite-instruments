@@ -1,0 +1,664 @@
+/* Hallmark: graphite-instrument-refinement; scope: app; existing hardware system retained. */
+/* critique: give every tool a continuous rounded shell; reserve the largest surface for working mathematics. */
+/* waiver: functional plotted coordinates and hardware labels are mathematical content, not decorative illustration or marketing copy. */
+:root {
+  --instrument-font: Inter, sans-serif;
+  --instrument-ink: #eef0e6;
+  --instrument-body: #303530;
+  --instrument-edge: #697064;
+  --instrument-face: linear-gradient(#555b51, #41483e);
+  --instrument-rim: #7e8777;
+  --instrument-base: #192218;
+  --instrument-number: linear-gradient(#eeeee1, #d9decd);
+  --instrument-number-ink: #283426;
+  --instrument-action: linear-gradient(#d7b494, #ba8b65);
+  --instrument-action-ink: #30241c;
+  --instrument-lcd: #edf0e5;
+  --instrument-lcd-ink: #2c3b2a;
+  --instrument-shadow: #15200d33;
+  --instrument-highlight: #ffffff55;
+  --instrument-focus-light: #deedcf;
+  --plot-paper: #fafbf6;
+  --plot-ink: #334338;
+  --plot-grid: #dce3d8;
+  --plot-axis: #82917f;
+  --plot-focus: #31614e;
+  --plot-error: #a1383a;
+  --plot-point: #85462b;
+  --plot-point-rim: #fffdf5;
+  --curve-1: #215aab;
+  --curve-2: #ad3e4f;
+  --curve-3: #2b7855;
+  --curve-4: #7950a1;
+  --curve-5: #976112;
+  --curve-6: #246e7b;
+}
+html,
+body {
+  overflow-x: clip;
+}
+.suite-finish {
+  max-width: 1120px;
+  margin: 10px auto -18px;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+.suite-finish .key-style-control {
+  margin: 0;
+}
+.instrument-material {
+  --material-ink: var(--shell-ink, var(--instrument-ink));
+  --material-lcd: var(--lcd, var(--instrument-lcd));
+  --material-edge: var(--shell-edge, var(--instrument-edge));
+  color: var(--material-ink);
+}
+.calculator.instrument-material {
+  border-radius: 30px;
+  padding: 24px;
+  border-color: var(--material-edge);
+}
+.calculator.desktop-calculator {
+  max-width: 390px;
+  margin: auto;
+}
+.instrument-material .lite-top {
+  letter-spacing: 0;
+  color: var(--material-ink);
+}
+.instrument-material .lite-top select {
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  border-color: var(--material-edge);
+  border-radius: 8px;
+}
+.instrument-material .lite-display {
+  border-radius: 12px;
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  border-color: var(--bezel-surface, var(--instrument-base));
+}
+.instrument-material .lite-keys button,
+.instrument-material .lite-functions button {
+  border-radius: var(--cap-radius, 12px);
+  border-color: var(--cap-base, var(--instrument-base));
+  border-top-color: var(--cap-rim, var(--instrument-rim));
+  background: var(--number-face, var(--instrument-number));
+  color: var(--number-ink, var(--instrument-number-ink));
+  font-family: var(--cap-font, var(--instrument-font));
+  box-shadow:
+    0 3px 0 var(--cap-base, var(--instrument-base)),
+    inset 0 1px 0 var(--instrument-highlight);
+  transition:
+    transform 70ms,
+    box-shadow 70ms,
+    filter 100ms;
+}
+.instrument-material .lite-functions button {
+  background: var(--cap-face, var(--instrument-face));
+  color: var(--cap-ink, var(--instrument-ink));
+  font-size: 14px;
+}
+.instrument-material .lite-keys .lite-operator {
+  background: var(--operator-face, var(--instrument-face));
+  color: var(--operator-ink, var(--instrument-ink));
+}
+.instrument-material .lite-keys .lite-enter,
+.instrument-material .calculate-action {
+  background: var(--enter-face, var(--instrument-action));
+  color: var(--enter-ink, var(--instrument-action-ink));
+}
+.instrument-material .lite-keys button:hover,
+.instrument-material .lite-functions button:hover {
+  filter: brightness(1.055);
+}
+.instrument-material .lite-keys button:active,
+.instrument-material .lite-functions button:active,
+.instrument-material button.is-depressed {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--cap-base, var(--instrument-base));
+}
+.calculator.specialist-material {
+  padding: 12px;
+  border-radius: 28px;
+}
+.specialist-material .tool-workspace {
+  border: 0;
+  border-radius: 18px;
+  background: none;
+  color: var(--material-ink);
+  overflow: clip;
+  gap: 12px;
+}
+.specialist-material .instrument-form {
+  border: 0;
+  padding: 24px 18px;
+}
+.specialist-material .tool-output {
+  border-radius: 15px;
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  box-shadow: inset 0 2px 5px var(--instrument-shadow);
+  margin: 0;
+  padding: 26px;
+}
+.specialist-material .instrument-form h2,
+.specialist-material .tool-output h2 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 13px;
+}
+.specialist-material .instrument-form :is(input, select, textarea) {
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  border-radius: 9px;
+  border-color: var(--material-edge);
+  box-shadow: inset 0 1px 3px var(--instrument-shadow);
+}
+.specialist-material .calculate-action {
+  border-radius: 10px;
+  border-color: var(--cap-base, var(--instrument-base));
+  box-shadow: 0 3px 0 var(--cap-base, var(--instrument-base));
+  transition:
+    transform 70ms,
+    box-shadow 70ms;
+}
+.specialist-material .calculate-action:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--cap-base, var(--instrument-base));
+}
+.specialist-material .tool-output :is(dt, .result-note) {
+  color: var(--instrument-lcd-ink);
+  opacity: 0.8;
+}
+.plot-page {
+  display: block;
+  min-height: 0;
+  max-width: 1480px;
+  margin: 34px auto 0;
+  padding: 0 24px 32px;
+  min-width: 0;
+}
+.plot-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.plot-heading nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 12px;
+}
+.plot-heading h1 {
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  margin: 14px 0 0;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+.plot-page button {
+  cursor: pointer;
+}
+.plot-heading button,
+.plot-instrument button {
+  border: 1px solid var(--material-edge, var(--suite-rule));
+  border-radius: 8px;
+  padding: 8px 11px;
+  font: 12px var(--instrument-font);
+  background: var(--cap-face, var(--instrument-face));
+  color: var(--cap-ink, var(--instrument-ink));
+  box-shadow: 0 2px 0 var(--cap-base, var(--instrument-base));
+  transition:
+    transform 70ms,
+    box-shadow 70ms;
+}
+.plot-heading button {
+  background: var(--sheet);
+  color: var(--sheet-ink);
+  box-shadow: none;
+}
+.plot-instrument button:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+.plot-instrument button[aria-pressed="true"] {
+  background: var(--enter-face, var(--instrument-action));
+  color: var(--enter-ink, var(--instrument-action-ink));
+}
+.plot-instrument button:disabled {
+  opacity: 0.55;
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  cursor: not-allowed;
+}
+.calculator.plot-instrument {
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 290px minmax(0, 1fr);
+  gap: 12px;
+  border-radius: 26px;
+}
+.plot-editor {
+  padding: 10px 10px 15px;
+  max-height: calc(100dvh - 260px);
+  min-height: 450px;
+  overflow: auto;
+  scrollbar-width: thin;
+  font-size: 12px;
+  min-width: 0;
+}
+.plot-editor-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: 4px 0 14px;
+}
+.plot-editor-heading:not(:first-child) {
+  margin-top: 28px;
+}
+.plot-editor h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.plot-editor :is(input, select) {
+  min-width: 0;
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  border: 1px solid var(--material-edge);
+  border-radius: 6px;
+  font: 13px var(--mono);
+  padding: 8px;
+}
+.plot-expression {
+  margin: 0 0 12px;
+}
+.plot-expression > div {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.plot-expression input[type="checkbox"] {
+  flex: none;
+  accent-color: var(--curve-color, var(--curve-1));
+}
+.plot-expression input:not([type="checkbox"]) {
+  width: 0;
+  flex: 1;
+}
+.plot-expression label {
+  font: 13px var(--mono);
+}
+.plot-expression button,
+.point-table button {
+  padding: 3px 6px;
+  font-size: 18px;
+  box-shadow: none;
+  background: none;
+  color: inherit;
+  border-color: var(--material-edge);
+}
+.plot-editor p[role="alert"] {
+  background: var(--material-lcd);
+  color: var(--plot-error);
+  padding: 8px;
+  border-radius: 6px;
+  line-height: 1.5;
+  font-size: 11px;
+  margin: 8px 0;
+}
+.point-table {
+  border-collapse: separate;
+  border-spacing: 4px;
+  width: 100%;
+  margin: 0 -4px 10px;
+}
+.point-table th {
+  font: 12px var(--mono);
+  font-weight: 400;
+  text-align: center;
+}
+.point-table td {
+  padding: 0;
+  border: 0;
+}
+.point-table td input {
+  width: 100%;
+}
+.point-table tr[data-invalid] input {
+  outline: 1px solid var(--plot-error);
+}
+.plot-label-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.plot-label-toggle input {
+  accent-color: var(--plot-focus);
+}
+.plot-help {
+  opacity: 0.75;
+  line-height: 1.7;
+  margin: 20px 0 0;
+  font-size: 11px;
+}
+.plot-window {
+  margin-top: 18px;
+}
+.plot-window summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.plot-window label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0;
+  font: 11px var(--mono);
+}
+.plot-window input {
+  width: 170px;
+}
+.plot-stage {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-radius: 15px;
+  overflow: clip;
+  background: var(--plot-paper);
+  color: var(--plot-ink);
+  box-shadow: inset 0 1px 3px var(--instrument-shadow);
+}
+.plot-controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--plot-grid);
+}
+.plot-controls button {
+  background: var(--plot-paper);
+  color: var(--plot-ink);
+  border-color: var(--plot-grid);
+  box-shadow: 0 1px 0 var(--plot-grid);
+}
+.plot-controls output {
+  font: 11px var(--mono);
+  margin-left: auto;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.plot-viewport {
+  height: max(460px, calc(100dvh - 310px));
+  position: relative;
+  min-width: 0;
+}
+.plot-viewport svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+  user-select: none;
+}
+.plot-viewport svg:active {
+  cursor: grabbing;
+}
+.plot-viewport.placing svg {
+  cursor: crosshair;
+}
+.plot-grid line {
+  stroke: var(--plot-grid);
+  stroke-width: 1;
+}
+.plot-axes line {
+  stroke: var(--plot-axis);
+  stroke-width: 1.3;
+}
+.plot-ticks text {
+  font: 11px var(--mono);
+  fill: var(--plot-ink);
+}
+[data-curve="0"] {
+  --curve-color: var(--curve-1);
+}
+[data-curve="1"] {
+  --curve-color: var(--curve-2);
+}
+[data-curve="2"] {
+  --curve-color: var(--curve-3);
+}
+[data-curve="3"] {
+  --curve-color: var(--curve-4);
+}
+[data-curve="4"] {
+  --curve-color: var(--curve-5);
+}
+[data-curve="5"] {
+  --curve-color: var(--curve-6);
+}
+.plot-curve path {
+  fill: none;
+  stroke: var(--curve-color);
+  stroke-width: 2.3;
+  stroke-linejoin: round;
+}
+.plot-point circle {
+  fill: var(--plot-point);
+  stroke: var(--plot-point-rim);
+  stroke-width: 2;
+}
+.plot-point text {
+  fill: var(--plot-point);
+  font: 11px var(--mono);
+  paint-order: stroke;
+  stroke: var(--plot-paper);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+.plot-trace circle {
+  fill: var(--plot-paper);
+  stroke: var(--plot-ink);
+  stroke-width: 2;
+}
+.plot-expanded {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  margin: 0;
+  max-width: none;
+  background: var(--sheet);
+  color: var(--sheet-ink);
+  padding: 16px;
+  overflow: auto;
+}
+.plot-expanded .plot-heading {
+  margin-bottom: 12px;
+}
+.plot-expanded .plot-heading h1 {
+  font-size: 23px;
+  margin-top: 8px;
+}
+.plot-expanded .plot-viewport {
+  height: calc(100dvh - 170px);
+}
+.plot-expanded .plot-editor {
+  max-height: calc(100dvh - 130px);
+}
+:is(.plot-page, .instrument-material, .suite-finish, .suite-header)
+  :is(button, a, input, select, textarea, summary):focus-visible,
+.plot-viewport svg:focus-visible {
+  outline: 2px solid var(--plot-focus);
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .suite-header .header-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  .suite-finish {
+    margin: 10px auto 0;
+    padding: 0 18px;
+  }
+  .plot-page {
+    margin-top: 22px;
+    padding: 0 12px 25px;
+  }
+  .plot-heading {
+    align-items: flex-start;
+  }
+  .plot-heading h1 {
+    font-size: 25px;
+  }
+  .plot-heading nav {
+    gap: 12px;
+    font-size: 11px;
+  }
+  .calculator.plot-instrument {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 8px;
+    border-radius: 22px;
+  }
+  .plot-editor {
+    min-height: 0;
+    max-height: 330px;
+    padding: 10px;
+  }
+  .plot-viewport {
+    height: 470px;
+  }
+  .plot-controls output {
+    flex-basis: 100%;
+    min-height: 15px;
+    margin: 0;
+  }
+  .plot-expanded .plot-editor {
+    max-height: 240px;
+  }
+  .plot-expanded .plot-viewport {
+    height: 55dvh;
+  }
+  .calculator.specialist-material {
+    padding: 8px;
+  }
+  .specialist-material .tool-workspace {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+  .specialist-material .instrument-form {
+    padding: 20px 12px;
+  }
+  .specialist-material .tool-output {
+    padding: 22px 16px;
+    min-height: 200px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .instrument-material button,
+  .plot-page button {
+    transition: none;
+    animation: none;
+  }
+}
+
+.calculator.surface-workspace {
+  padding: 16px;
+  border-radius: 28px;
+  color: var(--material-ink);
+}
+.surface-workspace.instrument-material .surface-controls {
+  border: 0;
+  padding: 10px 8px 20px;
+  color: var(--material-ink);
+}
+.surface-workspace.instrument-material .surface-controls input {
+  background: var(--material-lcd);
+  color: var(--instrument-lcd-ink);
+  border-color: var(--material-edge);
+  border-radius: 8px;
+}
+.surface-workspace.instrument-material button {
+  border-radius: 9px;
+  background: var(--enter-face, var(--instrument-action));
+  color: var(--enter-ink, var(--instrument-action-ink));
+  border-color: var(--material-edge);
+  box-shadow: 0 2px 0 var(--cap-base, var(--instrument-base));
+}
+.surface-workspace.instrument-material .surface-plot {
+  background: var(--plot-paper);
+  border-radius: 16px;
+}
+
+.instrument-material {
+  --material-focus: var(--instrument-focus-light);
+  --material-field-edge: var(--instrument-focus-light);
+}
+.instrument-material[data-shell] {
+  --material-focus: var(--plot-focus);
+  --material-field-edge: var(--instrument-edge);
+}
+.instrument-material
+  :is(button, input, select, textarea, summary):focus-visible {
+  outline-color: var(--material-focus);
+}
+.plot-stage :is(button, input, select):focus-visible {
+  outline-color: var(--plot-focus);
+}
+.plot-editor select {
+  border-color: var(--material-field-edge);
+}
+.suite-header select,
+.suite-finish select {
+  border-color: var(--instrument-edge);
+}
+.plot-heading button {
+  white-space: nowrap;
+}
+
+.calculator.instrument-material[data-key-style="classic"] {
+  --cap-radius: 8px;
+}
+.calculator.instrument-material[data-shell="clear"]::after {
+  border-radius: inherit;
+}
+
+.suite-workspace.light {
+  --surface-focus: var(--plot-focus);
+}
+.suite-workspace.dark {
+  --surface-focus: var(--instrument-focus-light);
+}
+.calculator.instrument-material {
+  background-color: var(--instrument-body);
+}
+.calculator.instrument-material[data-shell] {
+  background-color: var(--material-lcd);
+}
+.tool-breadcrumb a:focus-visible,
+.operation-tabs button:focus-visible,
+.suite-header :is(a, button, select):focus-visible,
+.suite-finish select:focus-visible {
+  outline: 2px solid var(--surface-focus);
+  outline-offset: 3px;
+}
+.instrument-material .lite-display input {
+  border: 1px solid var(--instrument-edge);
+  border-radius: 6px;
+  padding: 8px;
+}
+.instrument-material .lite-display input:focus-visible {
+  outline-color: var(--plot-focus);
+}
+.dark .suite-header select,
+.dark .suite-finish select {
+  border-color: var(--instrument-focus-light);
+}

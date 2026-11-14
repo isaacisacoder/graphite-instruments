@@ -1,0 +1,61 @@
+{
+  "name": "graphite-instruments",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "test": "vitest run",
+    "check": "tsc -b",
+    "preview": "vite preview",
+    "test:e2e": "playwright test",
+    "test:release": "npm run check && npm test && npm run build && npm run test:e2e",
+    "build:pages": "tsc -b && vite build --base=/graphite-instruments/",
+    "notices": "node scripts/third-party-notices.mjs",
+    "test:pages": "playwright test --config=playwright.pages.config.ts",
+    "prebuild": "npm run notices",
+    "prebuild:pages": "npm run notices"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "animejs": "^4.2.2",
+    "katex": "^0.19.1",
+    "mathjs": "^15.0.0",
+    "nerdamer": "^2.0.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.56.1",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/katex": "^0.16.8",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "jsdom": "^27.2.0",
+    "prettier": "^3.10.1",
+    "typescript": "~5.9.3",
+    "vite": "^7.2.2",
+    "vite-plugin-pwa": "^2.0.0",
+    "vitest": "^4.0.9"
+  },
+  "overrides": {
+    "glob": "^14.0.6",
+    "deepmerge": "4.1.1"
+  },
+  "license": "MIT",
+  "description": "Local-first calculator and graphing instruments for the browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isaacisacoder/graphite-instruments.git"
+  },
+  "bugs": {
+    "url": "https://github.com/isaacisacoder/graphite-instruments/issues"
+  },
+  "homepage": "https://isaacisacoder.github.io/graphite-instruments/"
+}
