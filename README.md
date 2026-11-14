@@ -1,5 +1,5 @@
 # Graphite
-
+https://isaacisacoder.github.io/graphite-instruments/
 A local-first math suite with a physical 84-style calculator, a large graph workspace, Basic and Scientific calculators, and financial, algebra, calculus, statistics, matrix and number-theory tools. React, strict TypeScript, Vite, math.js, Nerdamer and SVG; no backend, accounts, telemetry or remote calculation services.
 
 ## Setup
