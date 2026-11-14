@@ -10,35 +10,10 @@ concurrency:
   group: graphite-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: false
 jobs:
-  prepare:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    outputs:
-      revision: ${{ steps.source.outputs.revision }}
-    steps:
-      - uses: actions/checkout@v6
-      - name: Restore browser-uploaded source once
-        id: source
-        shell: bash
-        run: |
-          if [ -f graphite-source.zip ] && [ "$GITHUB_REF" = "refs/heads/main" ] && [ "$GITHUB_EVENT_NAME" != "pull_request" ]; then
-            unzip -q -o graphite-source.zip -x '.github/*'
-            rm graphite-source.zip
-            git config user.name 'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git add .
-            git commit -m 'Restore complete verified application source'
-            git push origin HEAD:main
-          fi
-          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
   verify:
-    needs: prepare
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          ref: ${{ needs.prepare.outputs.revision }}
       - uses: actions/setup-node@v4
         with:
           node-version: 24
